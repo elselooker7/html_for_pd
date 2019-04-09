@@ -2,24 +2,107 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>诊疗原型页面</title>
 	<style>
+	/*remove browser default styles*/
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, font, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td {
+		    margin: 0;
+		    padding: 0;
+		    border: 0;
+		    outline: 0;
+		    font-size: 100%;
+		    vertical-align: baseline;
+		    background: transparent;
+		    box-sizing: border-box;
+		    text-decoration: none;
+		}
+		body {
+		    line-height: 1;
+		}
+		ol, ul {
+		    list-style: none;
+		}
+		blockquote, q {
+		    quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+		    content: '';
+		    content: none;
+		}
+
+		/* remember to define focus styles! */
+		:focus {
+		    outline: 0;
+		}
+
+		/* remember to highlight inserts somehow! */
+		ins {
+		    text-decoration: none;
+		}
+		del {
+		    text-decoration: line-through;
+		}
+
+		/* tables still need 'cellspacing="0"' in the markup */
+		table {
+		    border-collapse: collapse;
+		    border-spacing: 0;
+		}
+		html{
+		    position: relative;
+		    width: 100%;
+		    height: 100%;
+		    overflow: hidden;
+		    font-size: 0;
+		    max-width: 500px;
+		    margin: 0px auto;
+		}
+		body{
+		    position: absolute;
+		    /*max-width: 500px;*/
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    overflow: hidden;
+		    background-color: #fff;
+		    background-image: url(../img/inv-1.jpg);
+		    background-size: cover;
+		    background-attachment: fixed;
+		    font-size: 0;
+		    color: #323442;
+		    font-family: "KaiTi","楷体","STKaiti","华文楷体","FangSong","仿宋","NSimSun","STXingkai","华文行楷","Microsoft YaHei";
+		}
+	/*remove end*/
+	/*set my style*/
 		.flex-mm{
 			display: flex;
 			display: -webkit-flex;
 			justify-content: center;
 			align-items: center;
+			height: 100%;
 		}
 		.p-btn{
 			display: block;
 			font-size: 30px;
 			font-weight: bold;
 		}
+	/*set end*/
 	</style>
 </head>
 <body>
 <div class="flex-mm">
-	<a href="./tcm_patient" class="p-btn">患者</a>
+	<a href="./tcm_patient/home.html" class="p-btn">患者</a>
+	<a href="./tcm_pharmacy/home.html" class="p-btn">患者</a>
 </div>
 </body>
 </html>
