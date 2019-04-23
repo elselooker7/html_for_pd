@@ -88,45 +88,76 @@
 		    box-shadow: -8px 0px 10px 0px #000;
 		    z-index: 10;
 		}
-		aside>ul{
-		    padding: 20px 0 10px;
+		.aside-ul{
 		    border-radius: 30px;
 		    background-color: #eff0f1;
+		    overflow: hidden;
 		    box-shadow: 0px 1px 1px 0px #ccc;
 		}
-		li a{
+		.aside-label{
+		    font-size: 14px;
+		    padding: 15px 0;
+			color: #777;
+			cursor: default;
+		}
+		.aside-ul>li{
+		    padding: 10px 0 10px;
+		}
+		.aside-ul>li+li{
+		    border-top: 1px solid #ccc;
+		}
+		.aside-nav{
 		    display: inline-block;
+		    width: 100%;
 		    padding: 20px 10px;
 		    color: #333;
 		    font-weight: bold;
 		}
-		li a:hover{
-			color: #888;
+		.aside-nav:hover{
+			/*color: #888;*/
+		    background-color: #e2e5e7;
+		    /*background-color: #fcfcfc;*/
+		}
+		.aside-label.active{
+			color: #2b899a;
+		    font-weight: bold;
+		}
+		.aside-nav.active{
+		    color: #fff;
+		    background-color: #2b899a;
+		    /*color: #2b899a;
+		    background-color: #fcfcfc;*/
 		}
 		main{
 		    width: 100%;
 		    overflow: hidden;
+		    transition: width .3s ease-out;
+		}
+		main.main-mb-view{
+		    width: 375px;
 		}
 		iframe{
 			height: 100%;
 			width: 100%;
-		}
-		.aside-label{
-			font-size: 14px;
-			color: #777;
-			cursor: default;
 		}
 	/*set end*/
 	</style>
 </head>
 <body>
 	<aside>
-		<ul>
+		<ul class="aside-ul">
 			<li>
 				<div class="aside-label">原型设计</div>
 				<ul>
-					<li><a href="./tcm_patient/home.html" target="mainIframe">患者档案管理</a></li>
-					<li><a href="./tcm_pharmacy/home.html" target="mainIframe">药房管理系统</a></li>
+					<li><a class="aside-nav nav-pc-view" href="./tcm_patient/home.html" target="mainIframe">患者档案管理</a></li>
+					<li><a class="aside-nav nav-pc-view" href="./tcm_pharmacy/home.html" target="mainIframe">药房管理系统</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="aside-label">开发调试</div>
+				<ul>
+					<li><a class="aside-nav nav-mb-view" href="http://10.buttertester.applinzi.com/pages/index.html" target="mainIframe">患者端</a></li>
+					<li><a class="aside-nav nav-mb-view" href="http://9.buttertester.applinzi.com/pages/index.html" target="mainIframe">医生端</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -134,5 +165,34 @@
 	<main>
 		<iframe src="./tcm_patient/home.html" frameborder="0" name="mainIframe"></iframe>
 	</main>
+    <script type="text/javascript" src="./lib/zepto.min.js"></script>
+	<script>
+	Zepto(function($){
+	  console.log('Ready to Zepto!')
+	})
+	  console.log('Ready to script!')
+	$(function(){
+	  console.log('Ready to function!')
+		var $main = $('main');
+		clickAsideNav($('.aside-nav').first());
+		$('aside').on('click','.aside-nav',function(e){
+			var $t = $(this);
+			clickAsideNav($(this));
+		})
+		function clickAsideNav($t){
+			$t.closest('aside').find('.active').removeClass('active');
+			$t.closest('ul').prev('.aside-label').addClass('active');
+			$t.addClass('active');
+			toggleMainView($t.hasClass('nav-mb-view'));
+		}
+		function toggleMainView(forMb) {
+			if (forMb) {
+				$main.addClass('main-mb-view');
+			}else{
+				$main.addClass('main-mb-view');
+			}
+		}
+	});
+	</script>
 </body>
 </html>
