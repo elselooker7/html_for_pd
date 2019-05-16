@@ -4,143 +4,144 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,
         maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 	<title>诊疗原型页面</title>
 	<style>
-	/*remove browser default styles*/
-		html, body, div, span, applet, object, iframe,
-		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-		a, abbr, acronym, address, big, cite, code,
-		del, dfn, em, font, img, ins, kbd, q, s, samp,
-		small, strike, strong, sub, sup, tt, var,
-		b, u, i, center,
-		dl, dt, dd, ol, ul, li,
-		fieldset, form, label, legend,
-		table, caption, tbody, tfoot, thead, tr, th, td {
-		    margin: 0;
-		    padding: 0;
-		    border: 0;
-		    outline: 0;
-		    font-size: 100%;
-		    vertical-align: baseline;
-		    background: transparent;
-		    box-sizing: border-box;
-		    text-decoration: none;
-		}
-		body {
-		    line-height: 1;
-		}
-		ol, ul {
-		    list-style: none;
-		}
-		blockquote, q {
-		    quotes: none;
-		}
-		blockquote:before, blockquote:after,
-		q:before, q:after {
-		    content: '';
-		    content: none;
-		}
+		/*remove browser default styles*/
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, font, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td {
+			    margin: 0;
+			    padding: 0;
+			    border: 0;
+			    outline: 0;
+			    font-size: 100%;
+			    vertical-align: baseline;
+			    background: transparent;
+			    box-sizing: border-box;
+			    text-decoration: none;
+			}
+			body {
+			    line-height: 1;
+			}
+			ol, ul {
+			    list-style: none;
+			}
+			blockquote, q {
+			    quotes: none;
+			}
+			blockquote:before, blockquote:after,
+			q:before, q:after {
+			    content: '';
+			    content: none;
+			}
 
-		/* remember to define focus styles! */
-		:focus {
-		    outline: 0;
-		}
+			/* remember to define focus styles! */
+			:focus {
+			    outline: 0;
+			}
 
-		/* remember to highlight inserts somehow! */
-		ins {
-		    text-decoration: none;
-		}
-		del {
-		    text-decoration: line-through;
-		}
+			/* remember to highlight inserts somehow! */
+			ins {
+			    text-decoration: none;
+			}
+			del {
+			    text-decoration: line-through;
+			}
 
-		/* tables still need 'cellspacing="0"' in the markup */
-		table {
-		    border-collapse: collapse;
-		    border-spacing: 0;
-		}
-	/*remove end*/
-	/*set my style*/
-		html,body{
-			height: 100%;
-		}
-		body{
-		    font: 16px "Hiragino Sans GB","Microsoft Yahei",sans-serif;
-		    color: #333333;
-		    line-height: 1.4;
-		    -webkit-font-smoothing: antialiased;
-		}
-		body,
-		.flex{
-			display: flex;
-			display: -webkit-flex;
-		    box-sizing: border-box;
-		}
-		aside{
-		    width: 180px;
-		    font-size: 16px;
-		    padding: 100px 16px 10px;
-		    justify-content: center;
-		    align-items: center;
-		    flex-shrink: 0;
-		    flex-grow: 0;
-		    text-align: center;
-		    box-shadow: -8px 0px 10px 0px #000;
-		    z-index: 10;
-		}
-		.aside-ul{
-		    border-radius: 30px;
-		    background-color: #eff0f1;
-		    overflow: hidden;
-		    box-shadow: 0px 1px 1px 0px #ccc;
-		}
-		.aside-label{
-		    font-size: 14px;
-		    padding: 15px 0;
-			color: #777;
-			cursor: default;
-		}
-		.aside-ul>li{
-		    padding: 10px 0 10px;
-		}
-		.aside-ul>li+li{
-		    border-top: 1px solid #ccc;
-		}
-		.aside-nav{
-		    display: inline-block;
-		    width: 100%;
-		    padding: 20px 10px;
-		    color: #333;
-		    font-weight: bold;
-		}
-		.aside-nav:hover{
-			/*color: #888;*/
-		    background-color: #e2e5e7;
-		    /*background-color: #fcfcfc;*/
-		}
-		.aside-label.active{
-			color: #2b899a;
-		    font-weight: bold;
-		}
-		.aside-nav.active{
-		    color: #fff;
-		    background-color: #2b899a;
-		    /*color: #2b899a;
-		    background-color: #fcfcfc;*/
-		}
-		main{
-		    width: 100%;
-		    overflow: hidden;
-		    transition: width .3s ease-out;
-		}
-		main.main-mb-view{
-		    width: 375px;
-		}
-		iframe{
-			height: 100%;
-			width: 100%;
-		}
-	/*set end*/
+			/* tables still need 'cellspacing="0"' in the markup */
+			table {
+			    border-collapse: collapse;
+			    border-spacing: 0;
+			}
+		/*remove end*/
+		/*set my style*/
+			html,body{
+				height: 100%;
+			}
+			body{
+			    font: 16px "Hiragino Sans GB","Microsoft Yahei",sans-serif;
+			    color: #333333;
+			    line-height: 1.4;
+			    -webkit-font-smoothing: antialiased;
+			}
+			body,
+			.flex{
+				display: flex;
+				display: -webkit-flex;
+			    box-sizing: border-box;
+			}
+			aside{
+			    width: 180px;
+			    font-size: 16px;
+			    padding: 100px 16px 10px;
+			    justify-content: center;
+			    align-items: center;
+			    flex-shrink: 0;
+			    flex-grow: 0;
+			    text-align: center;
+			    box-shadow: -8px 0px 10px 0px #000;
+			    z-index: 10;
+			}
+			.aside-ul{
+			    border-radius: 30px;
+			    background-color: #eff0f1;
+			    overflow: hidden;
+			    box-shadow: 0px 1px 1px 0px #ccc;
+			}
+			.aside-label{
+			    font-size: 14px;
+			    padding: 15px 0;
+				color: #777;
+				cursor: default;
+			}
+			.aside-ul>li{
+			    padding: 10px 0 10px;
+			}
+			.aside-ul>li+li{
+			    border-top: 1px solid #ccc;
+			}
+			.aside-nav{
+			    display: inline-block;
+			    width: 100%;
+			    padding: 20px 10px;
+			    color: #333;
+			    font-weight: bold;
+			}
+			.aside-nav:hover{
+				/*color: #888;*/
+			    background-color: #e2e5e7;
+			    /*background-color: #fcfcfc;*/
+			}
+			.aside-label.active{
+				color: #2b899a;
+			    font-weight: bold;
+			}
+			.aside-nav.active{
+			    color: #fff;
+			    background-color: #2b899a;
+			    /*color: #2b899a;
+			    background-color: #fcfcfc;*/
+			}
+			main{
+			    width: 100%;
+			    overflow: hidden;
+			    transition: width .3s ease-out;
+			}
+			main.main-mb-view{
+			    width: 375px;
+			}
+			iframe{
+				height: 100%;
+				width: 100%;
+			}
+		/*set end*/
 	</style>
 </head>
 <body>
@@ -189,7 +190,7 @@
 			if (forMb) {
 				$main.addClass('main-mb-view');
 			}else{
-				$main.addClass('main-mb-view');
+				$main.removeClass('main-mb-view');
 			}
 		}
 	});
